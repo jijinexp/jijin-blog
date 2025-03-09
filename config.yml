@@ -1,0 +1,121 @@
+# If your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would
+# contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+baseURL: "https://jijinexp.github.io/jijin-blog/"
+title: Jijin's Blog
+copyright: "© [PaperMod Contributors](https://github.com/adityatelange/hugo-PaperMod/graphs/contributors)"
+paginate.pagerSize: 5
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+mainsections: ["blogs", "papermod"]
+
+minify:
+  disableXML: true
+  # minifyOutput: true
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Blogs
+          url: blogs
+          weight: 5
+        - name: Search
+          url: search/
+          weight: 20
+        - name: Tags
+          url: tags/
+          weight: 10
+
+params:
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowShareButtons: true
+  ShowReadingTime: true
+  ShowReadingProgress: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  comments: true
+  images: ["images/papermod-cover.png"]
+
+  profileMode:
+    enabled: false
+    title: PaperMod
+    imageUrl: "#"
+    imageTitle: my image
+    imageWidth: 120
+    imageHeight: 120
+    buttons:
+      - name: Blogs
+        url: blogs
+      - name: Tags
+        url: tags
+
+  homeInfoParams:
+    Title: "PaperMod's Demo"
+    Content: >
+      👋 Welcome to my blog
+
+  socialIcons:
+    - name: github
+      title: View Source on Github
+      url: "https://example.org"
+    - name: Discord
+      title: Join discord community
+      url: "https:/example.org"
+
+  assets:
+    disableHLJS: true
+
+  fuseOpts:
+    isCaseSensitive: true
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+  outputs:
+    home:
+      - HTML
+      - RSS
+      - JSON # necessary for search
+
+  markup:
+    asciidocExt:
+      attributes: {}
+      backend: html5
+      extensions: []
+      failureLevel: fatal
+      noHeaderOrFooter: true
+      preserveTOC: false
+      safeMode: unsafe
+      sectionNumbers: false
+      trace: false
+      verbose: false
+      workingFolderCurrent: false
+    goldmark:
+      renderer:
+        unsafe: true
+    highlight:
+      noClasses: false
+  
